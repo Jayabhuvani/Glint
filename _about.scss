@@ -1,0 +1,71 @@
+@import "./mixins";
+
+@mixin Container2 {
+  .row1 {
+    @include Box(auto, 100%);
+    background-color: #39b54a;
+    padding: 60px 20px;
+    box-sizing: border-box;
+    @include breakpoint(800px) {
+      padding: 20px 15px;
+    }
+    .content {
+      text-align: center;
+      max-width: 1000px;
+      margin: auto;
+      @include breakpoint(900px) {
+        max-width: 700px;
+      }
+      > .font1 {
+        font-size: 20px;
+        @include breakpoint(900px) {
+          font-size: 15px;
+        }
+      }
+      > .font2 {
+        color: white;
+        font-weight: 600;
+        font-size: 80px;
+        @include breakpoint(900px) {
+          font-size: 45px;
+        }
+      }
+      > hr {
+        margin-top: 40px;
+        height: auto;
+        width: 40%;
+        margin: auto;
+      }
+      > .font3 {
+        max-width: 800px;
+        margin: 20px auto;
+        font-size: 20px;
+        @include breakpoint(900px) {
+          font-size: 17px;
+          text-align: center;
+        }
+      }
+    }
+    .rowblock {
+      @include Flex(center, center, row, wrap);
+      margin-top: 40px;
+      gap: 100px;
+      @include breakpoint(800px) {
+        margin-top: 10px;
+      }
+      .count {
+        font-size: 70px;
+        font-weight: bold;
+        color: white;
+        @include breakpoint(800px) {
+          font-size: 50px;
+        }
+        > h5 {
+          font-size: 20px;
+          font-weight: 600;
+          color: black;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,76 @@
+@import "./mixins";
+
+@mixin Container3 {
+  .row2 {
+    @include Box(auto, 100%);
+    background-color: white;
+    margin: auto;
+    article {
+      padding: 60px;
+      text-align: center;
+      max-width: 1000px;
+      margin: auto;
+      @include breakpoint(900px) {
+        max-width: 700px;
+      }
+      > h3 {
+        color: rgb(13, 220, 13);
+        font-size: 20px;
+        @include breakpoint(900px) {
+          font-size: 15px;
+        }
+      }
+      > h1 {
+        color: black;
+        // margin: 6px 0px 18px;
+        font-size: 52px;
+        font-weight: 600;
+        @include breakpoint(900px) {
+          text-align: center;
+          font-size: 28px;
+        }
+      }
+      > hr {
+        width: 40%;
+        height: auto;
+        margin: auto;
+        margin-top: 50px;
+      }
+    }
+    .rowblock {
+      display: flex;
+      justify-content: center;
+
+      // @include breakpoint(800px) {
+      //   background-color: aqua;
+      // }
+
+      .coursetitle {
+        padding: 30px 50px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        max-width: 1000px;
+        column-gap: 80px;
+        row-gap: 30px;
+        @include breakpoint(800px) {
+          grid-template-columns: 1fr;
+        }
+        .subhead {
+          padding: 10px 10px;
+          @include breakpoint(800px) {
+            text-align: center;
+          }
+          > h3 {
+            font-size: 30px;
+            font-weight: 600;
+          }
+          p {
+            padding: 20px 0px;
+            color: gray;
+          }
+        }
+      }
+    }
+  }
+}
